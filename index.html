@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographer Portfolio</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            height: 30px;
+            width: auto;
+        }
+
+        .hero-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .hero-section {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('images/hero.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .portfolio-item {
+            transition: transform 0.3s;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .category-card {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: background 0.3s;
+        }
+
+        .category-overlay:hover {
+            background: rgba(0,0,0,0.8);
+            color: white;
+        }
+
+        .btn-instagram {
+            background: #f09433; 
+            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+            background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+            color: white;
+        }
+        
+        .btn-instagram:hover {
+            background: #e6683c;
+            color: white;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="MHDNHNNY Logo">
+                <span>MHDNHNNY</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-1 fw-bold">MHDNHNNY</h1>
+            <p class="lead">Professional Photographer</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="images/photographer.jpg" alt="MHDNSHNNY" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h3>Welcome to Mhdnhnny</h3>
+                    <p class="lead">A meticulously curated collection of my work as a professional photographer.</p>
+                    <p>My passion for capturing moments, emotions, and the world's beauty through the lens has led me to create this digital showcase of my art. With years of experience in photography, I have honed my skills in capturing the essence of my subjects and presenting them in the best light possible.</p>
+                    <p>In this space, I hope to share my vision with you and offer you a glimpse into the world as seen through my lens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Portfolio</h2>
+            <div class="row g-4">
+                <!-- Wedding -->
+                <div class="col-md-4">
+                    <a href="wedding.html" class="text-decoration-none">
+                        <div class="category-card" style="background-image: url('images/wedding_thumb.jpg')">
+                            <div class="category-overlay">
+                                Wedding
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Convocation -->
+                <div class="col-md-4">
+                    <a href="convocation.html" class="text-decoration-none">
+                        <div class="category-card" style="background-image: url('images/graduation_thumb.jpg')">
+                            <div class="category-overlay">
+                                Convocation
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Portrait -->
+                <div class="col-md-4">
+                    <a href="portrait.html" class="text-decoration-none">
+                        <div class="category-card" style="background-image: url('images/portrait_thumb.jpg')">
+                            <div class="category-overlay">
+                                Portrait
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Food -->
+                <div class="col-md-4">
+                    <a href="food.html" class="text-decoration-none">
+                        <div class="category-card" style="background-image: url('images/food_thumb.jpg')">
+                            <div class="category-overlay">
+                                Food
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Urban -->
+                <div class="col-md-4">
+                    <a href="urban.html" class="text-decoration-none">
+                        <div class="category-card" style="background-image: url('images/urban_thumb.jpg')">
+                            <div class="category-overlay">
+                                Urban
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Cars -->
+                <div class="col-md-4">
+                    <a href="cars.html" class="text-decoration-none">
+                        <div class="category-card" style="background-image: url('images/car_thumb.jpg')">
+                            <div class="category-overlay">
+                                Cars
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="lead mb-4">Connect with Mhdnhnny</p>
+                    <div class="row row-cols-2 row-cols-md-4 g-3 justify-content-center">
+                        <div class="col">
+                            <a href="mailto:muhdanishcr@gmail.com" class="btn btn-danger w-100">
+                                <i class="fas fa-envelope"></i> Email Me
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="tel:0193130125" class="btn btn-primary w-100">
+                                <i class="fas fa-phone"></i> Call Me
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://wa.me/60193130125" class="btn btn-success w-100" target="_blank">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                        <div class="col">
+                            <a href="https://instagram.com/mhdnhnny" class="btn btn-instagram w-100" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <p>Email: muhdanishcr@gmail.com</p>
+                        <p>Phone: 019-3130125</p>
+                        <p>Instagram: @mhdnhnny</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 by Mhdnhnny. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
